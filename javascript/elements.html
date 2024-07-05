@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">JavaScript</div>
+    <div id="content">
+        <ol>
+            <li>JavaScript is client side lang </li>
+            <li> It runs in the browser </li>
+        </ol>
+        <button onclick="addToJs()">Show More</button>    
+    </div>
+    <script>
+        var headingEl= document.getElementById("heading");
+        headingEl.innerHTML=headingEl.innerHTML + "!!!";
+        //var array=["can change style","can change attributes","can change data sent to server","can change data from server","can show or hide an element"];
+        //var currentIndex =0;
+        function addToJs()
+        {
+            /**for(let i=0;i<array.length;i++)
+            {
+                let arEls=document.getElementById("ol");
+                arEls[0].innerHTML=console.log(array[i]);
+            }**/
+             
+            let arEls=document.getElementsByTagName("ol");
+            arEls[0].innerHTML="<li> It can change the html without server internal ";
+        }
+    </script>
+</body>
+</html>

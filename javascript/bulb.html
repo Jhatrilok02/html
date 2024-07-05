@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2> javascript to change attributes</h2>
+   <img id="bulb" src="offbulb.jfif" alt="Bulb on">
+   <br>
+   <img id="bulb" src="offbulb.jfif" alt = "Bulb off">
+   <br>
+   <button onclick="toggleBulbSate(this)">ON</button>
+   <script>
+    var bulbState="OFF";
+    function toggleBulbSate(bnt)
+    {
+        if(bulbState=="OFF")
+        {
+            bulbState="ON";
+            el.src="onbulb.png"
+            //var bntE1=event.target;
+            //btn
+        }
+    }
+   </script>
+   <!--<button onlcick="showbubONOFF()">ON&OFF</button>
+   <button onclick="showbubon()">ON</button>
+   <button onclick="showbuboff()">OFF</button>
+   <script>
+    function showbubONOFF()
+    { 
+        let el = document.getElementById("bulb");
+        if(el.src.match("onbulb.png"))
+        {
+            el.src="offbulb.jfif";
+        }
+        else{
+            el.src="onbulb.png";
+        }
+
+    }
+
+    /**function showbubon()
+    {
+        let el = document.getElementById("bulb");
+        el.src="download (3).png";
+    }
+    function showbuboff()
+    {
+        let el= document.getElementById("bulb");
+        el.src="download (1).jfif";
+    }**/
+   </script>
+-->
+</body>
+</html>

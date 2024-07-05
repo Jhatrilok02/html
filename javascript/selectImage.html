@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="fruits_img" src = "apple.jpg" alt="fruitsimg">
+    <select name="fruit" id="fruit" onchange="showFruit()">
+        <option value="apple">apple</option>
+        <option value="mango">mango</option>
+        <option value="banana">banana</option>
+        <option value="orange">orange</option>
+    </select>
+    <script>
+        var fruits = ["apple", "mango", "banana", "orange"];
+        var pics = ["apple.jpg", "mango.jpg", "banana.jfif", "orange.jfif"];
+        var el = document.getElementById("fruit");
+        var elI = document.getElementById("fruits_img");
+        function showFruit(){
+           for(let i = 0; i < fruits.length; i++){
+            if(fruits[i] === el.value){
+                elI.src = pics[i];
+                break;
+            }
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx Demo</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> See the console</h1>
+    Enter Your Pan Number: 5 letters 4 digits 1 letter, case insensitive, e.g., abcde1234t
+    <br>
+    <input type="text" name="pan" id="pan" oninput="testPan()">
+    <script>
+        function testPan() {
+            //Get the value of the input
+            var panValue = document.getElementById("pan").value;
+
+            // Define the regex pattern for PAN number
+            var panPattern = /^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$/;
+
+            // Get the input element
+            var inputElement = document.getElementById("pan");
+
+            // Check if the input value matches the PAN pattern
+            if (panPattern.test(panValue)) {
+                inputElement.style.backgroundColor = "lightgreen";
+            } else {
+                inputElement.style.backgroundColor = "red";
+            }
+            
+           /** var panEl =document.getElementById("pan");
+            var pan=panEl.value;
+            var pattPan=/^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$/;
+            if(pattPan.test(pan))
+            {
+                panEl.style.backgroundColor="lightgreen";
+            }
+            else
+            {
+                panEl.style.backgroundColor="orange";
+            }
+                **/
+        }
+
+        var patt = /aa+/i; // (/java/i)=>14  i= case insensitive
+        var str = "in computers aaa, java and javascript are langs";
+        var n = str.search(patt);
+        console.log(n);
+        var testResult = patt.test(str);
+        console.log(testResult);
+        var adhaar = "123412341234";
+        var pattAdhaar = /^[1-9][0-9]{11}$/; // ^ -> start $->end
+        console.log('adhar valid :' + pattAdhaar.test(adhaar));
+        var pattCaps = /[A-Z]/;
+        var pattSmall = /[a-z]/;
+        var pattDigit = /[0-9]/;
+        var pattSpecial = /@|#|$|%/;
+        var pass1 = "mypass@1";
+        if (pattCaps.test(pass1))
+            console.log("contain captial");
+        else
+            console.log("No capital");
+    </script>
+</body>
+</html>

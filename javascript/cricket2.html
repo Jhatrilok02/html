@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+</head>
+<body>
+    Choose Bowling/Batting
+    <button id="tossBowling">Bowling</button>
+    <button id="tossBatting">Batting</button>
+    Enter number <input type="number" name="num" id="num" min="0" max="6" onchange="shothit()">
+    Total Score of user <span id="totalScoreUser">0</span>
+    Total Score of computer <span id="totalScoreComputer">0</span>
+    Computer Number: <span id="compNum">0</span>
+
+    <script>
+        var userScore = 0;
+        var computerScore = 0;
+        var userTurn = true;
+        var gameOver = false;
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 7);
+        }
+
+        function calculateTotalScore() {
+            document.getElementById('totalScoreUser').innerText = userScore;
+            document.getElementById('totalScoreComputer').innerText = computerScore;
+        }
+
+        function checkOut(userNum, compNum) {
+            if (userNum === compNum) {
+                userTurn = !userTurn;
+                alert(userTurn ? 'Computer is out! User\'s turn to bat.' : 'User is out! Computer\'s turn to bat.');
+                return true;
+            }
+            return false;
+        }
+
+        function shothit() {
+            if (gameOver) {
+                alert('Game over! Please refresh to start a new game.');
+                return;
+            }
+
+            var userNum = parseInt(document.getElementById('num').value);
+            var compNum = getRandomNumber();
+            document.getElementById('compNum').innerText = compNum;
+
+            while (userNum !== compNum) {
+                if (userTurn) {
+                    userScore += userNum;
+                } else {
+                    computerScore += compNum;
+                }
+                calculateTotalScore();
+
+                userNum = parseInt(document.getElementById('num').value);
+                compNum = getRandomNumber();
+                document.getElementById('compNum').innerText = compNum;
+            }
+
+            if (checkOut(userNum, compNum)) {
+                calculateTotalScore();
+                return;
+            }
+
+            if (!userTurn && computerScore > userScore) {
+                alert('Computer wins!');
+                gameOver = true;
+            } else if (userTurn && userScore > computerScore) {
+                alert('User wins!');
+                gameOver = true;
+            }
+        }
+
+        var rand = Math.random();
+        rand = Math.floor(rand * 7);
+        console.log(rand);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+<body>
+    Number 1 : <input type="number" name="n1" id="n1"><br>
+    Number 2 : <input type="number" name="n2" id="n2"><br>
+    Answer : <input type="number" name="ans" id="ans">
+    <button onclick="add()">Add</button>
+    <script>
+        function add()
+        {
+            var el1= document.getElementById("n1");
+            var el2= document.getElementById("n2");
+            let val1= el1.value;
+            let val2= el2.value;
+            var el3= document.getElementById("ans");
+            el3.value= parseFloat(val1)+parseFloat(val2);
+            el3.value=Number(val1)+Number(val2);
+            
+        }
+    </script>
+</body>
+</html>

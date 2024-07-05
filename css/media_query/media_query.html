@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQuery</title>
+    <style>
+        .box
+        {
+            padding: 5px;
+            height: 100px;
+            width:100px;
+            background-color: lightgreen;
+        }
+
+        /*@media screen and (width: 300px) {
+            .box{
+                background-color: brown;
+            }
+            
+        }*/
+        /*@media screen and (min-width: 300px) {
+            .box{
+                background-color: brown;
+            }
+            
+        }*/
+        /* @media screen and (max-width: 300px) {
+            .box{
+                background-color: brown;
+            }
+            
+        }*/
+        @media screen and (min-width: 250px) and (max-width:300px){
+            .box{
+                background-color: brown;
+                border-radius: 50%;
+            }
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="box">Box1</div>
+</body>
+</html>

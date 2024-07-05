@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hide() {
+            var paragraphs = document.querySelectorAll("#main p");
+            paragraphs.forEach(function(p) {
+                p.style.display = "none";
+            });
+        }
+
+        function showParagraph(id) {
+            hide(); 
+            var paragraph = document.getElementById(id);
+            if (paragraph) {
+                paragraph.style.display = "block";
+            }
+        }
+    </script>
+
+    <button onclick="hide()">Hide All</button>
+    <button onclick="showParagraph('p1')">P1</button>
+    <button onclick="showParagraph('p2')">P2</button>
+    <button onclick="showParagraph('p3')">P3</button>
+    <button onclick="showParagraph('p4')">P4</button>
+    <button onclick="showParagraph('p5')">P5</button>
+
+    <div id="main">
+        <p id="p1" style="background-color: lightblue">1</p>
+        <p id="p2" style="background-color: lightcyan">2</p>
+        <p id="p3" style="background-color: lightgoldenrodyellow">3</p>
+        <p id="p4" style="background-color: lightgreen">4</p>
+        <p id="p5" style="background-color: lightpink">5</p>
+    </div>
+
+    <script>
+        hide(); // Initially hide all paragraphs
+    </script>
+</body>
+</html>
